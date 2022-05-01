@@ -30,6 +30,7 @@ from Raiden import (
     LOGGER,
     OWNER_ID,
     SUKUNA_ID,
+    KAZUHA_ID,
     WHITELIST_USERS,
     SUPPORT_USERS,
     spamwtc,
@@ -226,6 +227,18 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
                     f"𝑳𝑶𝑰𝑫 𝑭𝑶𝑹𝑮𝑬𝑹 〄 just joined the group"
+                )
+                continue
+
+            if new_mem.id == KAZUHA_ID:
+                update.effective_message.reply_photo(
+                    KAZUHA, caption=f"Behold The Power Of Ruka Akino. My Sensei {html.escape(user.first_name)} Just joined.", reply_to_message_id=reply,
+                    parse_mode=ParseMode.HTML,
+                )
+                welcome_log = (
+                    f"{html.escape(chat.title)}\n"
+                    f"#USER_JOINED\n"
+                    f"Kazuha just joined the group"
                 )
                 continue
 
