@@ -123,6 +123,7 @@ if ENV:
     API_HASH = os.environ.get("API_HASH", None)
     SPAMWATCH = os.environ.get("SPAMWATCH_API", None)
     SPAMMERS = os.environ.get("SPAMMERS", None)
+    KAZUHA_ID = os.environ.get("SUKUNA_ID", 5297261589)
 
 else:
     from Raiden.config import Development as Config
@@ -205,7 +206,7 @@ DEV_USERS.add(SUKUNA_ID)
 SUPPORT_USERS.add(1331072862)
 DEV_USERS.add(1956078011)
 BOT_ID = 5309383517
-DEV_USERS.add(1956078011)
+DEV_USERS.add(5297261589)
 
 # Pass if SpamWatch token not set.
 if SPAMWATCH is None:
